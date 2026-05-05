@@ -29,7 +29,7 @@ export function SiteNav() {
           href="https://github.com/apps/sigilix"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] bg-wax text-white h-9 px-4 rounded-sm hover:bg-wax/90 transition-colors"
+          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] bg-ink text-white h-9 px-4 rounded-sm hover:bg-ink/90 transition-colors"
           aria-label="Install Sigilix on GitHub"
         >
           <Github className="w-3.5 h-3.5" />

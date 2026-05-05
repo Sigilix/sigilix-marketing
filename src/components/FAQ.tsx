@@ -39,7 +39,7 @@ export function FAQ() {
           Questions
         </p>
         <h2 className="font-sans font-medium text-4xl md:text-6xl tracking-tight leading-[0.95] text-text-primary mb-12">
-          Common <span className="text-wax">objections.</span>
+          Common <span className="text-ink">objections.</span>
         </h2>
         <div className="border-t border-border">
           {FAQS.map((item, i) => {
@@ -48,14 +48,14 @@ export function FAQ() {
               <div key={i} className="border-b border-border">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className={`w-full flex items-center gap-4 py-6 text-left transition-colors ${isOpen ? "border-l-2 border-wax pl-4" : ""}`}
+                  className={`w-full flex items-center gap-4 py-6 text-left transition-colors ${isOpen ? "border-l-2 border-ink pl-4" : ""}`}
                   aria-expanded={isOpen}
                 >
                   <span className={`flex-1 font-sans text-lg ${isOpen ? "text-text-primary" : "text-text-primary"}`}>
                     {item.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-text-secondary transition-transform duration-300 ${isOpen ? "rotate-180 text-wax" : ""}`}
+                    className={`w-5 h-5 text-text-secondary transition-transform duration-300 ${isOpen ? "rotate-180 text-ink" : ""}`}
                   />
                 </button>
                 {isOpen && (

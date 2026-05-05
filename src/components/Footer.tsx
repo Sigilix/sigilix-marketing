@@ -3,24 +3,8 @@ import { Github, Mail, ExternalLink } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-border py-16 md:py-20 px-6 md:px-12">
-      {/* Watermark logo */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.03]"
-      >
-        <div className="relative w-[60vh] h-[60vh] max-w-none">
-          <Image
-            src="/sigil-logo.jpg"
-            alt=""
-            fill
-            className="logo-invert object-contain"
-            sizes="60vh"
-          />
-        </div>
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-7xl flex flex-col md:flex-row items-start md:items-end justify-between gap-12">
+    <footer className="relative border-t border-border py-16 md:py-20 px-6 md:px-12 bg-surface/30">
+      <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-start md:items-end justify-between gap-12">
         <div>
           <div className="flex items-center gap-3 mb-6">
             <Image
@@ -79,7 +63,7 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl mt-12 pt-8 border-t border-border">
+      <div className="mx-auto max-w-7xl mt-12 pt-8 border-t border-border">
         <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-text-secondary">
           © {new Date().getFullYear()} Arc &amp; Anchor · All rights reserved
         </p>

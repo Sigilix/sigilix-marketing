@@ -35,7 +35,7 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full"
         style={{
-          background: "radial-gradient(circle, color-mix(in srgb, var(--color-wax) 30%, transparent) 0%, transparent 70%)",
+          background: "radial-gradient(circle, color-mix(in srgb, var(--color-ink) 30%, transparent) 0%, transparent 70%)",
           filter: "blur(128px)",
           opacity: 0.5,
         }}
@@ -59,7 +59,7 @@ export function Hero() {
         >
           The mark of
           <br />
-          <span className="text-wax">merge-ready</span> code.
+          <span className="text-ink">merge-ready</span> code.
         </motion.h1>
 
         <motion.p
@@ -82,7 +82,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Install Sigilix on GitHub, opens in new tab"
-            className="inline-flex items-center gap-2 bg-wax text-white h-12 px-6 rounded-sm font-mono text-xs uppercase tracking-[0.2em] hover:bg-wax/90 transition-all hover:shadow-[0_0_30px_-5px_color-mix(in_srgb,var(--color-wax)_60%,transparent)] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas focus-visible:outline-none"
+            className="inline-flex items-center gap-2 bg-ink text-white h-12 px-6 rounded-sm font-mono text-xs uppercase tracking-[0.2em] hover:bg-ink/90 transition-all hover:shadow-[0_0_30px_-5px_color-mix(in_srgb,var(--color-ink)_60%,transparent)] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-canvas focus-visible:outline-none"
           >
             <Github className="w-4 h-4" />
             Install on GitHub

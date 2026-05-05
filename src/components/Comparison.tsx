@@ -44,7 +44,7 @@ export function Comparison() {
         <h2 className="font-sans font-medium text-4xl md:text-6xl tracking-tight leading-[0.95] text-text-primary mb-16">
           One model sleeps.
           <br />
-          <span className="text-wax">Four watch.</span>
+          <span className="text-ink">Four watch.</span>
         </h2>
 
         {/* Desktop two-column */}
@@ -55,7 +55,7 @@ export function Comparison() {
           <div className="bg-canvas p-6 font-mono text-xs uppercase tracking-[0.2em] text-text-secondary">
             Single-Agent reviewers
           </div>
-          <div className="bg-canvas p-6 font-mono text-xs uppercase tracking-[0.2em] text-wax border-l-2 border-wax">
+          <div className="bg-canvas p-6 font-mono text-xs uppercase tracking-[0.2em] text-ink border-l-2 border-ink">
             Sigilix
           </div>
           {ROWS.map((row, i) => (
@@ -72,7 +72,7 @@ export function Comparison() {
               <div className="bg-canvas p-6 text-text-secondary text-sm leading-relaxed">
                 {row.single}
               </div>
-              <div className="bg-canvas p-6 text-text-primary text-sm leading-relaxed border-l-2 border-wax shadow-[inset_0_0_60px_-20px_color-mix(in_srgb,var(--color-wax)_30%,transparent)]">
+              <div className="bg-canvas p-6 text-text-primary text-sm leading-relaxed border-l-2 border-ink shadow-[inset_0_0_60px_-20px_color-mix(in_srgb,var(--color-ink)_30%,transparent)]">
                 {row.sigilix}
               </div>
             </motion.div>
@@ -94,8 +94,8 @@ export function Comparison() {
                   <p className="font-mono text-[10px] uppercase tracking-widest text-text-secondary mb-1">Single-Agent</p>
                   <p className="text-sm text-text-secondary">{row.single}</p>
                 </div>
-                <div className="border-l-2 border-wax pl-3">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-wax mb-1">Sigilix</p>
+                <div className="border-l-2 border-ink pl-3">
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-ink mb-1">Sigilix</p>
                   <p className="text-sm text-text-primary">{row.sigilix}</p>
                 </div>
               </div>

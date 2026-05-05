@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import Image from "next/image"
 import { ChevronDown } from "lucide-react"
 
 const FINDINGS = [
@@ -40,7 +39,7 @@ export function ReviewPreview() {
         <h2 className="font-sans font-medium text-4xl md:text-6xl tracking-tight leading-[0.95] text-text-primary mb-6">
           Lands as a single,
           <br />
-          coherent <span className="text-wax">review.</span>
+          coherent <span className="text-ink">review.</span>
         </h2>
         <p className="text-lg text-text-secondary max-w-2xl mb-16 leading-relaxed">
           Findings appear inline on the diff, anchored to the exact line. The synthesizer summary leads. No 40-comment dump.
@@ -55,20 +54,17 @@ export function ReviewPreview() {
         >
           {/* Comment header */}
           <div className="flex items-center gap-3 mb-6">
+            {/* Reviewer monogram — replaces the wax-seal avatar with a
+                quieter manuscript-initials treatment so the logo doesn't
+                appear inside the product UI mock. */}
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
-              animate={inView ? { scale: [0.5, 1.2, 1], opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
-              className="w-12 h-12 rounded-full bg-wax flex items-center justify-center shadow-[inset_0_3px_6px_rgba(0,0,0,0.4),0_0_0_2px_var(--color-canvas),0_0_0_3px_var(--color-wax)]"
+              animate={inView ? { scale: [0.5, 1.05, 1], opacity: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
+              className="w-12 h-12 rounded-full bg-canvas ring-1 ring-ink/40 flex items-center justify-center text-ink font-sans text-sm tracking-tight"
               aria-hidden
             >
-              <Image
-                src="/sigil-logo.jpg"
-                alt=""
-                width={28}
-                height={28}
-                className="logo-invert"
-              />
+              SX
             </motion.div>
             <div className="flex-1">
               <p className="text-text-primary">
@@ -77,18 +73,18 @@ export function ReviewPreview() {
               </p>
               <p className="text-xs text-text-secondary">12 minutes ago</p>
             </div>
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-wax px-3 py-1 border border-wax rounded-sm">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink px-3 py-1 border border-ink rounded-sm">
               Request changes
             </span>
           </div>
 
           {/* Sigilix Summary header */}
-          <div className="border-l-2 border-wax pl-4 mb-6">
+          <div className="border-l-2 border-ink pl-4 mb-6">
             <h3 className="font-sans text-base font-medium text-text-primary mb-2">
               Sigilix Summary
             </h3>
             <p className="text-text-secondary leading-relaxed font-sans">
-              Three blocking findings across logic, security, and tests. The off-by-one in <code className="text-wax bg-canvas px-1.5 py-0.5 rounded-sm">applyDiscount()</code> is the highest-severity item; everything else has a clean fix in the same diff.
+              Three blocking findings across logic, security, and tests. The off-by-one in <code className="text-ink bg-canvas px-1.5 py-0.5 rounded-sm">applyDiscount()</code> is the highest-severity item; everything else has a clean fix in the same diff.
             </p>
             <p className="text-xs text-text-secondary mt-3 font-mono uppercase tracking-[0.15em]">
               3 findings inline below.
@@ -109,7 +105,7 @@ export function ReviewPreview() {
                     className="w-full flex items-center gap-3 p-4 text-left hover:bg-canvas transition-colors"
                     aria-expanded={isOpen}
                   >
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-wax px-2 py-1 bg-wax/10 rounded-sm">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink px-2 py-1 bg-ink/10 rounded-sm">
                       {f.specialist}
                     </span>
                     <span className="font-sans text-text-primary flex-1">

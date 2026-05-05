@@ -2,13 +2,12 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import Image from "next/image"
 
 const SPECIALISTS = [
   {
     name: "Logic",
     desc: "Traces control flow and catches semantic drift.",
-    color: "var(--color-wax)",
+    color: "var(--color-ink)",
     glyph: (
       // Branching control-flow glyph
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
@@ -22,7 +21,7 @@ const SPECIALISTS = [
   {
     name: "Security",
     desc: "Hunts leaks, injections, and unsafe defaults.",
-    color: "var(--color-wax)",
+    color: "var(--color-ink)",
     glyph: (
       // Shield-with-lock glyph
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
@@ -34,7 +33,7 @@ const SPECIALISTS = [
   {
     name: "Performance",
     desc: "Flags regressions before they hit production.",
-    color: "var(--color-wax)",
+    color: "var(--color-ink)",
     glyph: (
       // Lightning-meter glyph
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
@@ -45,7 +44,7 @@ const SPECIALISTS = [
   {
     name: "Tests",
     desc: "Verifies coverage, mocks, and assertion logic.",
-    color: "var(--color-wax)",
+    color: "var(--color-ink)",
     glyph: (
       // Crosshair-test glyph
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2">
@@ -83,7 +82,7 @@ export function HowItWorks() {
               transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="bg-canvas p-8 group hover:bg-surface transition-colors"
             >
-              <div className="text-wax mb-6">{s.glyph}</div>
+              <div className="text-ink mb-6">{s.glyph}</div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-text-primary mb-3">
                 {s.name}
               </p>
@@ -103,16 +102,24 @@ export function HowItWorks() {
           <motion.div
             animate={inView ? { scale: [1, 3], opacity: [0.4, 0] } : {}}
             transition={{ duration: 2, delay: 1.2, ease: "easeOut" }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-wax rounded-full"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-ink rounded-full"
           />
-          <Image
-            src="/sigil-logo.jpg"
-            alt="Synthesizer sigil"
-            width={80}
-            height={80}
-            className="logo-invert mb-6 relative z-10"
-          />
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-wax mb-3 relative z-10">
+          {/* Abstract synthesizer glyph — three interlocking rings with a center dot,
+              echoing seal geometry without re-using the trademark logo. */}
+          <svg
+            viewBox="0 0 80 80"
+            className="w-20 h-20 text-ink mb-6 relative z-10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            aria-hidden
+          >
+            <circle cx="40" cy="32" r="14" />
+            <circle cx="32" cy="46" r="14" />
+            <circle cx="48" cy="46" r="14" />
+            <circle cx="40" cy="40" r="2.5" fill="currentColor" />
+          </svg>
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-ink mb-3 relative z-10">
             Synthesizer
           </p>
           <h3 className="font-sans font-medium text-2xl md:text-3xl tracking-tight text-text-primary mb-4 relative z-10">
