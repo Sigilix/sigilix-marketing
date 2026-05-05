@@ -3,21 +3,53 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Github } from "lucide-react"
+import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 
-const ROUTES = [
-  { href: "/", label: "Product" },
-  { href: "/example", label: "Examples" },
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/faq", label: "FAQ" },
-] as const
+interface NavLink {
+  href: string
+  label: string
+  /** When `internalAnchor` is set, on `/` we smooth-scroll to it; on
+   *  any other route we navigate to `/${internalAnchor}` so the anchor
+   *  fires after the page mounts. */
+  internalAnchor?: string
+}
+
+const ROUTES: NavLink[] = [
+  { href: "/#ensemble", label: "Product", internalAnchor: "#ensemble" },
+  { href: "/ide", label: "IDE" },
+  { href: "/docs", label: "Docs" },
+  { href: "/signup#plans", label: "Pricing" },
+]
 
 export function SiteNav() {
   const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  const isActive = (link: NavLink) => {
+    if (link.href === "/ide") return pathname.startsWith("/ide")
+    if (link.href === "/docs") return pathname.startsWith("/docs")
+    if (link.href.startsWith("/signup")) return pathname.startsWith("/signup")
+    return pathname === "/"
+  }
+
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-canvas/60 border-b border-border">
-      <div className="mx-auto max-w-7xl px-6 md:px-12 h-14 flex items-center justify-between gap-6">
+    <header
+      className={cn(
+        "fixed top-0 z-40 w-full backdrop-blur-md transition-all",
+        scrolled
+          ? "bg-canvas/95 shadow-[0_1px_0_0_rgba(255,255,255,0.05)]"
+          : "bg-canvas/80 border-b border-border-subtle"
+      )}
+    >
+      <div className="mx-auto max-w-7xl px-6 md:px-8 h-16 flex items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-3 group shrink-0">
           <Image
             src="/sigil-logo.png"
@@ -27,13 +59,14 @@ export function SiteNav() {
             className="logo-invert"
             priority
           />
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-text-primary group-hover:text-gold transition-colors">
+          <span className="font-sans text-sm font-medium tracking-tight text-text-primary">
             Sigilix
           </span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-[0.18em]">
+
+        <nav className="hidden md:flex items-center gap-8 font-sans text-sm">
           {ROUTES.map((r) => {
-            const active = r.href === "/" ? pathname === "/" : pathname.startsWith(r.href)
+            const active = isActive(r)
             return (
               <Link
                 key={r.href}
@@ -49,23 +82,20 @@ export function SiteNav() {
                 {active && (
                   <span
                     aria-hidden
-                    className="absolute -bottom-[15px] left-0 right-0 h-[2px] bg-ink"
+                    className="absolute -bottom-[18px] left-0 right-0 h-px bg-accent"
                   />
                 )}
               </Link>
             )
           })}
         </nav>
-        <a
-          href="https://github.com/apps/sigilix"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] bg-ink text-white h-9 px-4 rounded-sm hover:bg-ink/90 transition-colors shrink-0"
-          aria-label="Add Sigilix to a repository"
+
+        <Link
+          href="/signup"
+          className="inline-flex items-center gap-2 bg-accent text-white text-sm font-medium px-4 py-2 rounded-sm hover:bg-accent-hover transition-colors shrink-0 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas focus-visible:outline-none"
         >
-          <Github className="w-3.5 h-3.5" />
-          Add to Repo
-        </a>
+          Sign in
+        </Link>
       </div>
     </header>
   )

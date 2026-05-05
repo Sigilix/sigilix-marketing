@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sigilix — AI code review with four specialist agents.",
+    default: "Sigilix — A seal of approval on every pull request.",
     template: "%s · Sigilix",
   },
   description:
