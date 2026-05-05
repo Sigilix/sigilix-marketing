@@ -106,7 +106,13 @@ export function PricingTeaser() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative rounded-sm p-8 ${
+              whileHover={{
+                y: plan.recommended ? -16 : -8,
+                boxShadow: "0 0 60px -15px var(--color-accent-glow)",
+                borderColor: "var(--color-accent)",
+                transition: { duration: 0.18, ease: [0.22, 1, 0.36, 1] },
+              }}
+              className={`relative rounded-sm p-8 transition-colors ${
                 plan.recommended
                   ? "bg-surface-raised border-t-2 border-accent shadow-[0_0_50px_-15px_var(--color-accent-glow)] md:-translate-y-2"
                   : "bg-surface border border-border"
