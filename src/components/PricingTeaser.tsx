@@ -32,11 +32,11 @@ export const PLANS: Plan[] = [
     name: "Pro",
     price: "$20",
     unit: "/ seat / month",
-    throughput: "8–10 PRs per 5 hours · per seat",
+    throughput: "8–10 PRs per 5 hours",
     features: [
       "Full ensemble",
       "Up to 10 repositories",
-      "Unlimited reviewer seats — per-seat billing",
+      "Unlimited seats · per-seat billing",
       "Priority email support",
       "Team insights dashboard",
       "Custom ignore patterns",
@@ -48,10 +48,10 @@ export const PLANS: Plan[] = [
     name: "Max",
     price: "$40",
     unit: "/ seat / month",
-    throughput: "15–20 PRs per 5 hours · per seat",
+    throughput: "15–20 PRs per 5 hours",
     features: [
       "Unlimited repositories",
-      "Unlimited reviewer seats — per-seat billing",
+      "Unlimited seats · per-seat billing",
       "Self-hosted runner option",
       "Dedicated support channel",
       "SSO & audit logs",
@@ -61,14 +61,14 @@ export const PLANS: Plan[] = [
   },
   {
     name: "Enterprise",
-    price: "Let’s talk",
-    unit: "custom · contact us",
+    price: "Custom",
+    unit: "",
     throughput: "Unlimited PRs · unlimited seats",
     features: [
       "Everything in Max",
-      "Linear triage integration assistance",
+      "Linear triage integration",
       "Unlimited PRs · no rate windows",
-      "Custom MSA, DPA, and procurement",
+      "Custom MSA & DPA",
       "On-prem or VPC deployment",
       "Dedicated solutions engineer",
     ],
@@ -120,11 +120,13 @@ export function PricingTeaser() {
               <p className="font-sans text-sm uppercase tracking-[0.15em] text-text-secondary mb-2">
                 {plan.name}
               </p>
-              <div className="flex items-baseline gap-2 mb-1">
+              <div className="flex items-baseline gap-2 mb-1 flex-wrap">
                 <span className="font-sans text-3xl font-semibold text-text-primary">
                   {plan.price}
                 </span>
-                <span className="font-sans text-sm text-text-secondary">{plan.unit}</span>
+                {plan.unit && (
+                  <span className="font-sans text-sm text-text-secondary">{plan.unit}</span>
+                )}
               </div>
               <p className="font-mono text-xs text-text-muted uppercase tracking-[0.15em] mb-8">
                 {plan.throughput}
