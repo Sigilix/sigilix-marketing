@@ -4,16 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface NavLink {
   href: string
   label: string
   badge?: string
-  /** When `internalAnchor` is set, on `/` we smooth-scroll to it; on
-   *  any other route we navigate to `/${internalAnchor}` so the anchor
-   *  fires after the page mounts. */
-  internalAnchor?: string
 }
 
 const ROUTES: NavLink[] = [
@@ -28,6 +26,7 @@ const ROUTES: NavLink[] = [
 export function SiteNav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -35,6 +34,15 @@ export function SiteNav() {
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  useEffect(() => {
+    if (!mobileOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [mobileOpen])
 
   const isActive = (link: NavLink) => {
     if (link.href === "/how-it-works") return pathname.startsWith("/how-it-works")
@@ -100,13 +108,75 @@ export function SiteNav() {
           })}
         </nav>
 
-        <Link
-          href="/signup"
-          className="inline-flex items-center gap-2 bg-accent text-white text-sm font-medium px-4 py-2 rounded-sm hover:bg-accent-hover transition-colors shrink-0 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas focus-visible:outline-none"
-        >
-          Sign in
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/signup"
+            className="hidden sm:inline-flex items-center gap-2 bg-accent text-white text-sm font-medium px-4 py-2 rounded-sm hover:bg-accent-hover transition-colors shrink-0 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas focus-visible:outline-none"
+          >
+            Sign in
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-sm border border-border text-text-primary hover:bg-surface-raised transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas focus-visible:outline-none"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-panel"
+          >
+            {mobileOpen ? (
+              <X className="w-4 h-4" strokeWidth={1.5} />
+            ) : (
+              <Menu className="w-4 h-4" strokeWidth={1.5} />
+            )}
+          </button>
+        </div>
       </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-nav-panel"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden border-t border-border-subtle bg-canvas/95 backdrop-blur-md"
+          >
+            <nav className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-1 font-sans text-base">
+              {ROUTES.map((r) => {
+                const active = isActive(r)
+                return (
+                  <Link
+                    key={r.href}
+                    href={r.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "flex items-center justify-between py-3 px-3 rounded-sm transition-colors",
+                      active
+                        ? "text-text-primary bg-surface-raised"
+                        : "text-text-secondary hover:text-text-primary hover:bg-surface-raised/60"
+                    )}
+                  >
+                    <span>{r.label}</span>
+                    {r.badge && (
+                      <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-accent border border-accent/40 px-1.5 py-0.5 rounded-sm">
+                        {r.badge}
+                      </span>
+                    )}
+                  </Link>
+                )
+              })}
+              <Link
+                href="/signup"
+                onClick={() => setMobileOpen(false)}
+                className="mt-3 inline-flex items-center justify-center bg-accent text-white text-sm font-medium px-4 py-3 rounded-sm hover:bg-accent-hover transition-colors"
+              >
+                Sign in
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

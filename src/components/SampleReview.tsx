@@ -102,7 +102,7 @@ export function SampleReview() {
             <p className="font-sans text-text-primary leading-relaxed">
               <span className="text-accent font-medium">Core</span> found{" "}
               <span className="text-text-primary font-medium">3 findings</span>{" "}
-              across <span className="text-text-primary font-medium">2 specialists</span>.{" "}
+              across <span className="text-text-primary font-medium">3 specialists</span>.{" "}
               <span className="text-text-primary font-medium">1</span> requires action before merge.
             </p>
           </div>
@@ -147,13 +147,12 @@ export function SampleReview() {
                       <p className="font-sans text-text-secondary leading-relaxed mt-3 mb-3">
                         {g.body}
                       </p>
-                      <a
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
+                      <button
+                        type="button"
                         className="font-mono text-xs text-accent hover:underline"
                       >
                         View diff →
-                      </a>
+                      </button>
                     </div>
                   )}
                 </motion.div>

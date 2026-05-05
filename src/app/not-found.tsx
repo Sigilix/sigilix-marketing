@@ -32,7 +32,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 bg-ink text-white h-12 px-6 rounded-sm font-mono text-xs uppercase tracking-[0.2em] hover:bg-ink/90 transition-colors"
+          className="inline-flex items-center gap-2 bg-accent text-white h-12 px-6 rounded-sm font-mono text-xs uppercase tracking-[0.2em] hover:bg-accent-hover transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Return to base

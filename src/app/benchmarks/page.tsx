@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Link from "next/link"
 import { DeepHero, CTABand, CrossLinkFooter, DeepSection } from "@/components/DeepShell"
 import { CountUp } from "@/components/CountUp"
 
@@ -184,12 +185,12 @@ export default function BenchmarksPage() {
               drip campaign.
             </p>
           </div>
-          <a
+          <Link
             href="/signup"
             className="px-6 py-3 bg-accent hover:bg-accent-hover text-white font-sans text-sm font-medium rounded-sm transition-colors whitespace-nowrap"
           >
             Notify me
-          </a>
+          </Link>
         </div>
       </DeepSection>
 

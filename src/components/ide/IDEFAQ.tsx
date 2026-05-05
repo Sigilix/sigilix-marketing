@@ -58,6 +58,8 @@ export function IDEFAQ() {
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center gap-4 p-5 text-left hover:bg-surface-raised transition-colors"
                   aria-expanded={isOpen}
+                  aria-controls={`ide-faq-panel-${i}`}
+                  id={`ide-faq-button-${i}`}
                 >
                   <span className="flex-1 font-sans font-medium text-text-primary">{item.q}</span>
                   <ChevronDown
@@ -74,6 +76,9 @@ export function IDEFAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
+                      id={`ide-faq-panel-${i}`}
+                      role="region"
+                      aria-labelledby={`ide-faq-button-${i}`}
                     >
                       <div className="px-5 pb-5 border-t border-border-subtle pt-4 text-text-secondary leading-relaxed">
                         {item.a}
