@@ -144,11 +144,11 @@ export function LoginScreen() {
 
         <p className="mt-5 text-center font-mono text-[11px] text-text-muted leading-relaxed">
           By continuing, you agree to our{" "}
-          <a href="#" className="text-text-secondary hover:text-text-primary transition-colors">
+          <a href="/terms" className="text-text-secondary hover:text-text-primary transition-colors">
             Terms of Service
           </a>{" "}
           and{" "}
-          <a href="#" className="text-text-secondary hover:text-text-primary transition-colors">
+          <a href="/privacy" className="text-text-secondary hover:text-text-primary transition-colors">
             Privacy Policy
           </a>
           .

@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Github } from "lucide-react"
 
 export function Footer() {
   return (
@@ -45,39 +44,23 @@ export function Footer() {
             },
             { label: "Security", href: "/security" },
             { label: "Benchmarks", href: "/benchmarks" },
-            {
-              label: "GitHub",
-              href: "https://github.com/Arc-and-Anchor/sigilix",
-              external: true,
-            },
-            { label: "Status", href: "#" },
+            { label: "Status", href: "/status" },
           ]}
         />
 
         <FooterCol
           title="Legal"
           links={[
-            { label: "Privacy", href: "#" },
-            { label: "Terms", href: "#" },
+            { label: "Privacy", href: "/privacy" },
+            { label: "Terms", href: "/terms" },
           ]}
         />
       </div>
 
-      <div className="mx-auto max-w-7xl pt-8 border-t border-border-subtle flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="mx-auto max-w-7xl pt-8 border-t border-border-subtle">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-text-muted">
           © {new Date().getFullYear()} Sigilix · A mark of Arc &amp; Anchor
         </p>
-        <div className="flex items-center gap-4">
-          <a
-            href="https://github.com/Arc-and-Anchor/sigilix"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-muted hover:text-text-primary transition-colors"
-            aria-label="Sigilix on GitHub"
-          >
-            <Github className="w-4 h-4" />
-          </a>
-        </div>
       </div>
     </footer>
   )
