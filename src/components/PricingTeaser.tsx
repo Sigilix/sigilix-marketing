@@ -145,7 +145,7 @@ export function PricingTeaser() {
               </ul>
 
               <a
-                href={plan.contact ? "mailto:sales@sigilix.ai?subject=Enterprise%20pricing" : "https://app.sigilix.ai"}
+                href={plan.contact ? "mailto:sales@arcanchor.com?subject=Enterprise%20pricing" : "https://app.sigilix.ai"}
                 className={`block w-full text-center font-sans text-sm font-medium h-11 leading-[44px] rounded-sm transition-colors ${
                   plan.recommended
                     ? "bg-accent text-white hover:bg-accent-hover"

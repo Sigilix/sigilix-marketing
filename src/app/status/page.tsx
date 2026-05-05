@@ -87,10 +87,10 @@ export default function StatusPage() {
         <p className="text-text-secondary leading-relaxed max-w-3xl">
           Email{" "}
           <a
-            href="mailto:status@sigilix.ai?subject=Subscribe%20to%20Sigilix%20incident%20updates"
+            href="mailto:status@arcanchor.com?subject=Subscribe%20to%20Sigilix%20incident%20updates"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            status@sigilix.ai
+            status@arcanchor.com
           </a>{" "}
           to subscribe to incident notifications. We will only email you when there is a real
           customer-impacting event — not for routine maintenance announcements.

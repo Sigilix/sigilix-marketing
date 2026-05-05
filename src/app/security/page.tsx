@@ -139,7 +139,7 @@ export default function SecurityPage() {
           <Milestone status="done" label="Security architecture review" detail="Internal review by an external advisor. Hardened secret handling, ephemeral inference, and request-level isolation." />
           <Milestone status="active" label="SOC 2 Type II" detail="In progress with a Big-Four-adjacent firm. Target audit window: Q4 2026. Bridge letter available on request." />
           <Milestone status="active" label="Annual penetration test" detail="Scoped to the Sigilix worker, GitHub App, and dashboard. Engagement booked for Q3 2026." />
-          <Milestone status="planned" label="Bug bounty program" detail="Postponed until post Series-A. We won&apos;t run a bounty we can&apos;t triage in 24h. Email security@sigilix.ai for responsible disclosure today." />
+          <Milestone status="planned" label="Bug bounty program" detail="Postponed until post Series-A. We won&apos;t run a bounty we can&apos;t triage in 24h. Email security@arcanchor.com for responsible disclosure today." />
           <Milestone status="planned" label="HIPAA / FedRAMP / SOC 2 Type II refresh" detail="Driven by enterprise customer requirements. We pursue certifications when a paying customer needs them, not before." />
         </ol>
       </DeepSection>

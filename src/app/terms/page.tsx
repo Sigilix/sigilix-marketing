@@ -23,10 +23,10 @@ export default function TermsPage() {
             By using Sigilix you agree to these terms. They cover what we provide, what we expect
             of you, and the limits on both sides. If anything below is unclear, email{" "}
             <a
-              href="mailto:hello@sigilix.ai"
+              href="mailto:support@arcanchor.com"
               className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
             >
-              hello@sigilix.ai
+              support@arcanchor.com
             </a>{" "}
             before you proceed.
           </>
@@ -55,7 +55,7 @@ export default function TermsPage() {
           {[
             "You must be at least 18 and authorized to install GitHub Apps on the repositories you connect.",
             "You are responsible for the actions taken under your account, including those of your team members on shared seats.",
-            "Notify us promptly at security@sigilix.ai if you suspect unauthorized access.",
+            "Notify us promptly at security@arcanchor.com if you suspect unauthorized access.",
             "Paid plans are billed monthly in arrears via the payment processor on file. Failure to pay results in suspension after the grace period documented in /pricing.",
             "You may cancel or downgrade at any time; refunds are evaluated case-by-case (see Privacy and Billing for the policy summary).",
           ].map((line) => (
@@ -149,9 +149,10 @@ export default function TermsPage() {
 
       <DeepSection number="10" kicker="Governing law" title={<>Where disputes are resolved.</>}>
         <p className="text-text-secondary leading-relaxed max-w-3xl">
-          These Terms are governed by the laws of the State of Delaware, USA, without regard to
+          These Terms are governed by the laws of the State of Nevada, USA, without regard to
           conflict-of-laws provisions. Disputes will be resolved in the state or federal courts
-          located in Delaware, except where mandated otherwise by your local jurisdiction.
+          located in Las Vegas, Nevada (Clark County), except where mandated otherwise by your
+          local jurisdiction.
         </p>
       </DeepSection>
 
@@ -170,17 +171,17 @@ export default function TermsPage() {
         <p className="text-text-secondary leading-relaxed max-w-3xl">
           Legal:{" "}
           <a
-            href="mailto:legal@sigilix.ai"
+            href="mailto:legal@arcanchor.com"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            legal@sigilix.ai
+            legal@arcanchor.com
           </a>
           . Privacy:{" "}
           <a
-            href="mailto:privacy@sigilix.ai"
+            href="mailto:privacy@arcanchor.com"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            privacy@sigilix.ai
+            privacy@arcanchor.com
           </a>
           .
         </p>

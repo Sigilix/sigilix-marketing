@@ -129,10 +129,10 @@ export default function PrivacyPage() {
           honor GDPR, CCPA, and equivalent regimes for all customers regardless of region. Send
           requests to{" "}
           <a
-            href="mailto:privacy@sigilix.ai"
+            href="mailto:privacy@arcanchor.com"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            privacy@sigilix.ai
+            privacy@arcanchor.com
           </a>{" "}
           and we will respond within 30 days.
         </p>
@@ -154,24 +154,24 @@ export default function PrivacyPage() {
         <p className="text-text-secondary leading-relaxed max-w-3xl">
           Privacy questions:{" "}
           <a
-            href="mailto:privacy@sigilix.ai"
+            href="mailto:privacy@arcanchor.com"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            privacy@sigilix.ai
+            privacy@arcanchor.com
           </a>
           . Security disclosures:{" "}
           <a
-            href="mailto:security@sigilix.ai"
+            href="mailto:security@arcanchor.com"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            security@sigilix.ai
+            security@arcanchor.com
           </a>
           . Anything else:{" "}
           <a
-            href="mailto:hello@sigilix.ai"
+            href="mailto:support@arcanchor.com"
             className="text-text-primary hover:text-accent transition-colors underline-offset-4 hover:underline"
           >
-            hello@sigilix.ai
+            support@arcanchor.com
           </a>
           .
         </p>
