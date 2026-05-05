@@ -8,7 +8,7 @@ export function SiteNav() {
       <div className="mx-auto max-w-7xl px-6 md:px-12 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <Image
-            src="/sigil-logo.jpg"
+            src="/sigil-logo.png"
             alt="Sigilix"
             width={28}
             height={28}

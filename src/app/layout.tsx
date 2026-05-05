@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   icons: {
-    icon: "/sigil-logo.jpg",
+    icon: "/sigil-logo.png",
   },
 }
 

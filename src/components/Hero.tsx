@@ -20,7 +20,7 @@ export function Hero() {
           className="relative w-[120vh] h-[120vh] max-w-none"
         >
           <Image
-            src="/sigil-logo.jpg"
+            src="/sigil-logo.png"
             alt=""
             fill
             className="logo-invert object-contain"

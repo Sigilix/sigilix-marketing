@@ -61,23 +61,16 @@ body {
   }
 }
 
-/* Logo glyph rendering — the source asset is a JPG (black glyph on
-   white background, no alpha). We render the glyph in the right
-   color by:
-   1. inverting the image so the glyph becomes white on black, then
-   2. screening over the canvas so the black background disappears
-      into the dark canvas and only the white glyph remains visible.
-   In light mode we do the opposite: skip invert, multiply against
-   the warm parchment canvas so the white background drops out and
-   the black glyph is preserved. */
+/* Logo glyph rendering — sigil-logo.png is a transparent PNG with
+   black glyph on alpha background. In dark mode we invert+brighten
+   so the glyph reads as white. In light mode we leave it alone so
+   the original black glyph reads against the parchment canvas. */
 .logo-invert {
   filter: invert(1) brightness(2);
-  mix-blend-mode: screen;
 }
 
 @media (prefers-color-scheme: light) {
   .logo-invert {
     filter: none;
-    mix-blend-mode: multiply;
   }
 }

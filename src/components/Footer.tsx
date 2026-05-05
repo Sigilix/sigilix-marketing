@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3 mb-6">
             <Image
-              src="/sigil-logo.jpg"
+              src="/sigil-logo.png"
               alt="Sigilix"
               width={36}
               height={36}
