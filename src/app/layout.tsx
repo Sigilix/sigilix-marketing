@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     description: "The mark of merge-ready code.",
     images: ["/og.png"],
   },
-  icons: {
-    icon: "/sigil-logo.png",
-  },
+  // Next.js 16 auto-discovers icon.png, apple-icon.png, and favicon.ico
+  // from src/app/. Don't double-declare here — that just overrides the
+  // file-system convention with a duplicate path.
 }
 
 export default function RootLayout({
