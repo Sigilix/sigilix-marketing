@@ -45,6 +45,11 @@ export function Footer() {
             { label: "Security", href: "/security" },
             { label: "Benchmarks", href: "/benchmarks" },
             { label: "Status", href: "/status" },
+            {
+              label: "GitHub",
+              href: "https://github.com/Arc-and-Anchor",
+              external: true,
+            },
           ]}
         />
 
