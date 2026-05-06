@@ -9,7 +9,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 export function PricingPlans() {
   return (
     <section id="plans" className="relative py-12 md:py-16 px-6 md:px-8">
-      <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="sgl-pricing-grid mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {PLANS.map((plan, i) => (
           <motion.div
             key={plan.name}
@@ -23,9 +23,9 @@ export function PricingPlans() {
               borderColor: "var(--color-accent)",
               transition: { duration: 0.18, ease: EASE },
             }}
-            className={`relative rounded-sm p-8 transition-colors ${
+            className={`sgl-pricing-card relative rounded-sm p-8 transition-colors ${
               plan.recommended
-                ? "bg-surface-raised border-t-2 border-accent shadow-[0_0_50px_-15px_var(--color-accent-glow)] md:-translate-y-2"
+                ? "sgl-pricing-card--recommended bg-surface-raised border-t-2 border-accent shadow-[0_0_50px_-15px_var(--color-accent-glow)] md:-translate-y-2"
                 : "bg-surface border border-border"
             }`}
           >

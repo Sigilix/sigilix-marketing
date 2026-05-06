@@ -71,3 +71,16 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Pricing tier — release the recommended card's static highlight when a
+   sibling card is being hovered. Otherwise hovering the Pro tier added
+   a second visual focus while the recommended one stayed permanently
+   accented, so two cards looked equally "selected" at once. */
+.sgl-pricing-grid:has(.sgl-pricing-card:hover) .sgl-pricing-card--recommended:not(:hover) {
+  background-color: var(--color-surface);
+  border-top-color: transparent;
+  border-top-width: 1px;
+  border-color: var(--color-border);
+  box-shadow: none;
+  transform: none;
+}
