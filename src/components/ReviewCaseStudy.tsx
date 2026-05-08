@@ -6,7 +6,7 @@ import { ReactNode } from "react"
 const EASE = [0.22, 1, 0.36, 1] as const
 
 type Severity = "critical" | "warning" | "info"
-type Specialist = "glyph" | "warden" | "spark" | "weave" | "core"
+type Specialist = "glyph" | "warden" | "pulse" | "weave" | "core"
 
 interface Finding {
   specialist: Specialist
@@ -24,7 +24,7 @@ const SEVERITY_CLASSES: Record<Severity, string> = {
 const SPECIALIST_LABEL: Record<Specialist, string> = {
   glyph: "Glyph",
   warden: "Warden",
-  spark: "Spark",
+  pulse: "Pulse",
   weave: "Weave",
   core: "Core",
 }

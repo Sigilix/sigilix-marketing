@@ -35,11 +35,11 @@ without an allowlist. Validate against approvedHosts[].`,
     icon: Shield,
   },
   {
-    name: "Spark",
+    name: "Pulse",
     role: "Performance Specialist",
     catches:
       "N+1 queries, unnecessary re-renders, memory leaks, unbounded recursion, and Big-O regressions.",
-    example: `[Spark] O(n²) render loop
+    example: `[Pulse] O(n²) render loop
 components/Table.tsx:112 — sorting inside render()
 Memoize with useMemo keyed by sortKey.`,
     icon: Zap,
@@ -60,7 +60,7 @@ when total < 0. Remove or handle as error path.`,
     catches:
       "It doesn't find bugs; it resolves the noise of the other four. Core deduplicates overlapping findings, suppresses false positives via cross-reference, ranks by merge-blocking impact, and writes the final comment you actually read.",
     example: `[Core] Unified 2 findings into 1
-Warden + Spark both flagged the unvalidated loop.
+Warden + Pulse both flagged the unvalidated loop.
 After context check: severity lowered to Warning.
 Final output: single actionable comment.`,
     icon: GitMerge,

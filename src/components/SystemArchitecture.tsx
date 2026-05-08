@@ -7,7 +7,7 @@ import { Layers, Shield, Zap, Type as TypeIcon, GitMerge } from "lucide-react"
 const NODES = [
   { name: "Glyph", role: "Architecture", icon: Layers, x: 50, y: 8 },
   { name: "Warden", role: "Security", icon: Shield, x: 90, y: 38 },
-  { name: "Spark", role: "Performance", icon: Zap, x: 75, y: 88 },
+  { name: "Pulse", role: "Performance", icon: Zap, x: 75, y: 88 },
   { name: "Weave", role: "Semantics", icon: TypeIcon, x: 25, y: 88 },
 ] as const
 

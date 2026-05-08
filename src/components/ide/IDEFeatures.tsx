@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import {
   GitPullRequestArrow,
   Wrench,
-  Sparkles,
+  Gift,
   Telescope,
   Save,
   Bug,
@@ -31,7 +31,7 @@ const VIBE_CARDS = [
     body: "Sigilix retrieves the surrounding files, types, and PR conventions of the repo. Findings are grounded, not guessed.",
   },
   {
-    icon: Sparkles,
+    icon: Gift,
     title: "Free in IDE",
     body: "Every account gets the IDE plugin with generous rate limits — no credit card, no PR-quota burn for in-editor reviews.",
   },
@@ -242,7 +242,7 @@ function FeatureMock({ kind }: { kind: string }) {
           stale auth cache used in a write transaction
         </div>
         <div className="border-l-2 border-warning/60 pl-3 mb-3">
-          <span className="text-warning">Spark · Warning · </span>
+          <span className="text-warning">Pulse · Warning · </span>
           missing index on the new query path
         </div>
         <div className="border-l-2 border-text-muted pl-3">
