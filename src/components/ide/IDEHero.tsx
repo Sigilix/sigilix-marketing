@@ -52,7 +52,7 @@ export function IDEHero() {
             transition={{ duration: 0.6, ease: EASE, delay: 0.12 }}
             className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-xl mb-8"
           >
-            The full Sigilix ensemble running inline in your editor. Warden, Glyph, Spark, and Weave
+            The full Sigilix ensemble running inline in your editor. Warden, Glyph, Pulse, and Weave
             on every save — no commit, no push, no waiting on CI.
           </motion.p>
           <motion.div
@@ -160,7 +160,7 @@ function EditorMock() {
           }
         />
         <InlineFinding
-          specialist="Spark"
+          specialist="Pulse"
           severity="warning"
           line={4}
           body={

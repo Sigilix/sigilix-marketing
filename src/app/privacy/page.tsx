@@ -100,7 +100,7 @@ export default function PrivacyPage() {
               </Tr>
               <Tr>
                 <Td label>Moonshot AI (Kimi)</Td>
-                <Td>Diff hunks + retrieval context for Spark, Weave, Core</Td>
+                <Td>Diff hunks + retrieval context for Pulse, Weave, Core</Td>
                 <Td>Zero retention; never used for training</Td>
               </Tr>
               <Tr>

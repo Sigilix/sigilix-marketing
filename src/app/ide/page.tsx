@@ -8,7 +8,7 @@ import { CTABand, CrossLinkFooter } from "@/components/DeepShell"
 export const metadata: Metadata = {
   title: "Sigilix IDE — Coming Q3 2026",
   description:
-    "The Sigilix specialist ensemble running inline in your editor. Warden, Glyph, Spark, and Weave on every save — no commit, no push, no waiting on CI.",
+    "The Sigilix specialist ensemble running inline in your editor. Warden, Glyph, Pulse, and Weave on every save — no commit, no push, no waiting on CI.",
 }
 
 export default function IDEPage() {

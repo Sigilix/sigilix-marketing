@@ -40,7 +40,7 @@ const CASES: ReviewCase[] = [
         ),
       },
       {
-        specialist: "spark",
+        specialist: "pulse",
         severity: "warning",
         category: "Performance · index",
         body: (
@@ -75,7 +75,7 @@ const CASES: ReviewCase[] = [
 + }`,
     findings: [
       {
-        specialist: "spark",
+        specialist: "pulse",
         severity: "critical",
         category: "Performance · N+1 query",
         body: (
@@ -109,7 +109,7 @@ const byInvoice = groupBy(lines, "invoiceId")`}
       },
     ],
     takeaway:
-      "The diff looks ‘clean,’ which is exactly why generalist reviewers miss it. Spark&apos;s only job is performance — N+1s are its bread and butter.",
+      "The diff looks ‘clean,’ which is exactly why generalist reviewers miss it. Pulse&apos;s only job is performance — N+1s are its bread and butter.",
   },
   {
     id: "dead-code",
@@ -213,7 +213,7 @@ const byInvoice = groupBy(lines, "invoiceId")`}
     title: "A race condition only Core could synthesize",
     language: "TypeScript",
     scenario:
-      "Spark finds a missed cache invalidation. Warden finds a permission check on a stale read. Neither, alone, recognizes the production-class bug. Core does.",
+      "Pulse finds a missed cache invalidation. Warden finds a permission check on a stale read. Neither, alone, recognizes the production-class bug. Core does.",
     diff: `// src/services/orders.ts
   async function applyDiscount(orderId: string, code: string) {
     const order = await cache.get(\`order:\${orderId}\`)
@@ -227,7 +227,7 @@ const byInvoice = groupBy(lines, "invoiceId")`}
   }`,
     findings: [
       {
-        specialist: "spark",
+        specialist: "pulse",
         severity: "warning",
         category: "Performance · cache staleness",
         body: (
@@ -257,7 +257,7 @@ const byInvoice = groupBy(lines, "invoiceId")`}
         category: "Synthesis · race condition",
         body: (
           <>
-            Spark and Warden each found a partial flaw. Together they describe a real{" "}
+            Pulse and Warden each found a partial flaw. Together they describe a real{" "}
             <span className="text-accent">CVE-class race</span>: a transferred order, with a stale
             cache entry, can have a discount applied under the previous owner&apos;s permissions and
             against the previous total. Either the cache read must be invalidated on transfer or the

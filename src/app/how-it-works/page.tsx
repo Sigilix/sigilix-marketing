@@ -35,7 +35,7 @@ const SPECIALISTS = [
     ],
   },
   {
-    name: "Spark",
+    name: "Pulse",
     role: "Performance",
     icon: Zap,
     model: "Kimi K2.6",
@@ -79,7 +79,7 @@ const FAILURE_MODES = [
   },
   {
     title: "Specialist disagreement",
-    body: "When two specialists conflict (e.g., Spark says ‘ship faster’, Glyph says ‘refactor first’), Core resolves with the trade-off explicit, never silently picking a side.",
+    body: "When two specialists conflict (e.g., Pulse says ‘ship faster’, Glyph says ‘refactor first’), Core resolves with the trade-off explicit, never silently picking a side.",
   },
   {
     title: "Stale head SHA",
@@ -187,7 +187,7 @@ export default function HowItWorksPage() {
             Before any model runs, Sigilix builds a tailored retrieval bundle: the diff hunks, the
             files those hunks live in, the imports they touch, and the conventions of the
             surrounding repo. Each specialist gets a different slice — Warden sees lockfiles and
-            CVE feeds; Glyph sees the dependency graph; Spark sees query plans where available.
+            CVE feeds; Glyph sees the dependency graph; Pulse sees query plans where available.
           </>
         }
       >
@@ -237,7 +237,7 @@ export default function HowItWorksPage() {
             </p>
             <p className="font-sans text-text-primary mb-3">Stronger writer, better at synthesizing across signals.</p>
             <p className="text-sm text-text-secondary leading-relaxed">
-              Powers Spark, Weave, and Core. Superior on naming, contract intent, and the final
+              Powers Pulse, Weave, and Core. Superior on naming, contract intent, and the final
               synthesis step where four specialist outputs become one coherent review.
             </p>
           </div>

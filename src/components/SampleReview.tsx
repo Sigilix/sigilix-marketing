@@ -21,7 +21,7 @@ const GROUPS: Group[] = [
       "`userId` from `req.params` is passed directly into a SQL template on line 44. Use the parameterized query pattern established in `authService.ts`.",
   },
   {
-    specialist: "Spark",
+    specialist: "Pulse",
     category: "Performance",
     severity: "Warning",
     body:

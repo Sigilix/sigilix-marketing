@@ -128,7 +128,7 @@ export function Hero() {
               <span className="text-accent font-medium">Warden</span> flagged an unsanitized route parameter.
             </p>
             <p>
-              <span className="text-accent font-medium">Spark</span> caught an N+1 query in the new repository layer.
+              <span className="text-accent font-medium">Pulse</span> caught an N+1 query in the new repository layer.
             </p>
             <p>
               <span className="text-accent font-medium">Glyph</span> noted a cross-boundary import.
