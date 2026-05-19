@@ -34,8 +34,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: previewImage,
-        width: 512,
-        height: 512,
         alt: "Sigilix mark",
       },
     ],
