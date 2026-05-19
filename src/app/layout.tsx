@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 })
 
 const siteUrl = "https://sigilix.ai"
-const previewImage = `${siteUrl}/sigilix-email-footer.jpg`
+const linkPreviewImage = `${siteUrl}/sigilix-link-preview.jpg`
 
 export const metadata: Metadata = {
   title: {
@@ -33,17 +33,17 @@ export const metadata: Metadata = {
     siteName: "Sigilix",
     images: [
       {
-        url: previewImage,
+        url: linkPreviewImage,
         alt: "Sigilix mark",
       },
     ],
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Sigilix",
     description: "The mark of merge-ready code.",
-    images: [previewImage],
+    images: [linkPreviewImage],
   },
 }
 
