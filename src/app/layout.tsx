@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Sigilix",
     description: "The mark of merge-ready code.",
     images: [previewImage],
