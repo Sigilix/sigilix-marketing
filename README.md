@@ -32,7 +32,7 @@ Run `npx create-next-app@latest .` (or your stack of choice) inside this dir to 
 - Tagline: *"The mark of merge-ready code."*
 - Differentiator: **multi-agent ensemble** — 4 parallel specialists (logic / security / performance / tests) + a synthesizer per PR review. No standalone competitor (CodeRabbit, Cursor Bugbot, Greptile) runs this architecture.
 - Colors / typography / logo: pending design pass
-- Email footer image: `https://sigilix.ai/sigilix-email-footer.jpg`
+- Email footer image: `https://sigilix.ai/sigilix-email-footer.jpg` (420×180)
 - Link preview image: `https://sigilix.ai/sigilix-link-preview.jpg`
 
 ## Vercel deploy
